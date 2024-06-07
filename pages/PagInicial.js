@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { ScrollView, View, StyleSheet, Image, Text, Pressable } from "react-native";
 import { useNavigation } from '@react-navigation/native';
+import { useFonts, KulimPark_600SemiBold, KulimPark_700Bold } from '@expo-google-fonts/kulim-park';
+import AppLoading from 'expo-app-loading';
 
 function PagInicial() {
   const navigation = useNavigation();
@@ -21,6 +23,15 @@ function PagInicial() {
     setCarrinho([...carrinho, plastico]);
   };
 
+  let [fontsLoaded] = useFonts({
+    KulimPark_600SemiBold,
+    KulimPark_700Bold,
+  });
+
+  if (!fontsLoaded) {
+    return <AppLoading />;
+  }
+
   return (
     <ScrollView style={styles.container}>
       <View style={styles.header}>
@@ -30,7 +41,7 @@ function PagInicial() {
         <Pressable style={styles.view6} onPress={() => navigation.navigate('Emp')}>
           <Text style={styles.buttonText}>Sou fornecedor</Text>
         </Pressable>
-        <Pressable onPress={() => navigation.navigate('Carrinho', { carrinho: carrinho })}>
+        <Pressable onPress={() => navigation.navigate('Carrinho', { carrinho, setCarrinho })}>
           <Image
             resizeMode="auto"
             source={{
@@ -44,12 +55,12 @@ function PagInicial() {
             plasticos.map((plastico, index) => (
               <View style={styles.productItem} key={index}>
                 <View style={styles.productDescription}>
-                  <Text>Tipo: {plastico.tipo_plastico}</Text>
-                  <Text>Descrição: {plastico.ds_descricao}</Text>
+                  <Text style={styles.productPrice}>Tipo: {plastico.tipo_plastico}</Text>
+                  <Text style={styles.productPrice}>Descrição: {plastico.ds_descricao}</Text>
                 </View>
                 <View style={styles.productFooter}>
                   <View style={styles.productPrice}>
-                    <Text>R$ {plastico.ds_preco}</Text>
+                    <Text style={styles.productPrice}>R$ {plastico.ds_preco}</Text>
                   </View>
                   <Pressable onPress={() => adicionarAoCarrinho(plastico)}>
                     <Image
@@ -71,7 +82,6 @@ function PagInicial() {
     </ScrollView>
   );
 }
-
 
 
 const styles = StyleSheet.create({
@@ -97,7 +107,7 @@ const styles = StyleSheet.create({
   headerText: {
     fontSize: 24,
     color: "#FFF",
-    fontFamily: "Kulim Park, sans-serif",
+    fontFamily: "KulimPark_700Bold",
   },
   logo: {
     alignSelf: "flex-end",
@@ -112,7 +122,6 @@ const styles = StyleSheet.create({
     maxWidth: 364,
     marginTop: 32,
     alignItems: "stretch",
-    gap: 20,
   },
   productItem: {
     borderRadius: 6,
@@ -121,24 +130,20 @@ const styles = StyleSheet.create({
     borderWidth: 3,
     backgroundColor: "#FFF",
     padding: 15,
-  },
-  productImage: {
-    alignSelf: "center",
-    width: 150,
-    aspectRatio: 1.08,
+    marginBottom: 20, 
   },
   productDescription: {
-    fontFamily: "Kulim Park, sans-serif",
+    fontFamily: "KulimPark_700Bold",
     marginTop: 11,
   },
   productFooter: {
     flexDirection: "row",
     marginTop: 6,
-    alignItems: "stretch",
+    alignItems: "center", 
     justifyContent: "space-between",
   },
   productPrice: {
-    fontFamily: "Kulim Park, sans-serif",
+    fontFamily: "KulimPark_700Bold",
     marginTop: 13,
   },
   cartIcon: {
@@ -148,9 +153,17 @@ const styles = StyleSheet.create({
   view6: {
     backgroundColor: 'rgba(71, 105, 48, 1)',
     borderRadius: 8,
-    padding: 10,
+    paddingVertical: 6,
+    paddingHorizontal: 12,
     marginTop: 10,
     alignItems: 'center',
+    alignSelf: 'center', 
+    marginBottom: 10,
+  },
+  buttonText: {
+    color: "#FFF",
+    fontSize: 16,
+    fontFamily: "KulimPark_700Bold",
   },
 });
 

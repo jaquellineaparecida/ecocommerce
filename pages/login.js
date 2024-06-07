@@ -83,17 +83,17 @@ function Login() {
 }
 
 const styles = StyleSheet.create({
+  scrollView: {
+    flexGrow: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
   view1: {
     backgroundColor: "#FFF",
-    display: "flex",
     maxWidth: 480,
     width: "100%",
     flexDirection: "column",
     alignItems: "stretch",
-    fontSize: 24,
-    color: "#000",
-    fontWeight: "700",
-    margin: "0 auto",
     padding: 50,
   },
   image1: {
@@ -101,27 +101,24 @@ const styles = StyleSheet.create({
     width: 236,
     maxWidth: "100%",
     aspectRatio: 1.19,
+    marginBottom: 35
   },
   view2: {
-    fontFamily: "KulimPark_700Bold",
     marginTop: 10,
+    alignItems: 'center',
   },
   view3: {
-    fontFamily: "Kulim Park, sans-serif",
     borderRadius: 18,
     borderColor: "#476930",
-    borderStyle: "solid",
     borderWidth: 3,
     backgroundColor: "#FFF",
-    marginTop: 15,
+    marginTop: 40,
     justifyContent: "center",
     padding: 15,
   },
   view4: {
-    fontFamily: "Kulim Park, sans-serif",
     borderRadius: 18,
     borderColor: "#476930",
-    borderStyle: "solid",
     borderWidth: 3,
     backgroundColor: "#FFF",
     marginTop: 10,
@@ -129,7 +126,6 @@ const styles = StyleSheet.create({
     padding: 15,
   },
   view5: {
-    fontFamily: "Kulim Park, sans-serif",
     borderRadius: 8,
     backgroundColor: "#476930",
     marginTop: 40,
@@ -140,17 +136,17 @@ const styles = StyleSheet.create({
   text: {
     fontSize: 18,
     textAlign: 'center',
-    fontFamily: "KulimPark_700Bold"
+    fontFamily: "KulimPark_700Bold",
   },
   textInput: {
     fontSize: 16,
     padding: 10,
-    fontFamily: "KulimPark_700Bold"
+    fontFamily: "KulimPark_700Bold",
   },
   buttonText: {
     color: "#FFF",
     fontSize: 18,
-    fontFamily: "KulimPark_700Bold"
+    fontFamily: "KulimPark_700Bold",
   },
 });
 

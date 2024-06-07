@@ -134,7 +134,7 @@ const styles = StyleSheet.create({
     width: "100%",
     flexDirection: "column",
     alignItems: "stretch",
-    margin: "0 auto",
+    margin: 5,
     padding: "10px 8px 8px 8px",
   },
   view2: { 
@@ -163,7 +163,7 @@ const styles = StyleSheet.create({
     backgroundColor: "#FFF",
     marginTop: 15,
     justifyContent: "center",
-    padding: "20px 20px",
+    padding: 14,
   },
   view5: {
     borderRadius: 18,
@@ -175,7 +175,7 @@ const styles = StyleSheet.create({
     alignItems: "start",
     whiteSpace: "nowrap",
     justifyContent: "center",
-    padding: "20px 20px",
+    padding: 14,
   },
   view6: {
     borderRadius: 18,
@@ -188,7 +188,7 @@ const styles = StyleSheet.create({
     alignItems: "stretch",
     gap: 20,
     whiteSpace: "nowrap",
-    padding: "20px 52px 20px 22px",
+    padding: 14,
   },
   view7: {
     flexGrow: "1",
@@ -205,7 +205,7 @@ const styles = StyleSheet.create({
     alignItems: "start",
     whiteSpace: "nowrap",
     justifyContent: "center",
-    padding: "20px 20px",
+    padding: 14,
   },
   view9: {
     borderRadius: 18,
@@ -217,7 +217,7 @@ const styles = StyleSheet.create({
     alignItems: "start",
     whiteSpace: "nowrap",
     justifyContent: "center",
-    padding: "20px 20px",
+    padding: 14,
   },
   view10: {
     borderRadius: 18,
@@ -229,7 +229,7 @@ const styles = StyleSheet.create({
     alignItems: "start",
     whiteSpace: "nowrap",
     justifyContent: "center",
-    padding: "20px 20px",
+    padding: 14,
   },
   view11: {
     borderRadius: 8,
@@ -239,7 +239,7 @@ const styles = StyleSheet.create({
     color: "#FFF",
     whiteSpace: "nowrap",
     justifyContent: "center",
-    padding: "16px 16px",
+    padding: 14,
   },
   text1: {
      fontFamily: "KulimPark_700Bold",

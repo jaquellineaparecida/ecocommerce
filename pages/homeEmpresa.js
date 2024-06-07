@@ -1,8 +1,14 @@
 import { View,StyleSheet,Text, TouchableOpacity } from "react-native";
 import { useNavigation } from '@react-navigation/native';
+import { useFonts, KulimPark_600SemiBold, KulimPark_700Bold } from '@expo-google-fonts/kulim-park';
 
 function HomeEmp() {
   const navigation = useNavigation();
+
+  let [fontsLoaded] = useFonts({
+    KulimPark_600SemiBold,
+    KulimPark_700Bold,
+  });
   
   return (
     <View style={styles.view1}>
@@ -25,22 +31,19 @@ const styles = StyleSheet.create({
     paddingBottom: 80,
     flexDirection: "column",
     alignItems: "stretch",
-    fontSize: 24,
-    color: "#FFF",
-    fontWeight: "700",
     margin: "0 auto",
   },
   view2: {
-    fontFamily: "Kulim Park, sans-serif",
+    fontFamily: "KulimPark_700Bold",
     backgroundColor: "#86B049",
     width: "100%",
     alignItems: "center",
     whiteSpace: "nowrap",
     justifyContent: "center",
-    padding: "30px 60px",
+    padding: 45,
   },
   view3: {
-    fontFamily: "Kulim Park, sans-serif",
+    fontFamily: "KulimPark_700Bold",
     borderRadius: 8,
     backgroundColor: "#476930",
     alignSelf: "center",

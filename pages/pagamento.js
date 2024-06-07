@@ -41,14 +41,14 @@ function Pagamento() {
     <ScrollView>
       <View style={styles.view1}>
         <View style={styles.view2}>
-          <Text>Pagamento</Text>
+          <Text style={styles.text2}>Pagamento</Text>
         </View>
         <View style={styles.view3}>
         <View style={styles.view4}>
-          <Text>Preencha o formulário para prosseguirmos com a sua compra</Text>
+          <Text style={styles.text}>Preencha o formulário para prosseguirmos com a sua compra</Text>
         </View>
           <View style={styles.view5}>
-            <Text>Nome no cartão</Text>
+            <Text style={styles.text}>Nome no cartão</Text>
             <TextInput
               style={styles.input}
               value={nomeCartao}
@@ -56,7 +56,7 @@ function Pagamento() {
             />
           </View>
           <View style={styles.view6}>
-            <Text>Número do cartão</Text>
+            <Text style={styles.text}>Número do cartão</Text>
             <TextInput
               style={styles.input}
               value={numeroCartao}
@@ -64,7 +64,7 @@ function Pagamento() {
             />
           </View>
           <View style={styles.view7}>
-            <Text>CNPJ</Text>
+            <Text style={styles.text}>CNPJ</Text>
             <TextInput
               style={styles.input}
               value={cnpj}
@@ -72,7 +72,7 @@ function Pagamento() {
             />
           </View>
           <View style={styles.view8}>
-            <Text>Data de validade</Text>
+            <Text style={styles.text}>Data de validade</Text>
             <TextInput
               style={styles.input}
               value={validade}
@@ -80,7 +80,7 @@ function Pagamento() {
             />
           </View>
           <View style={styles.view9}>
-            <Text>CVV</Text>
+            <Text style={styles.text}>CVV</Text>
             <TextInput
               style={styles.input}
               value={cvv}
@@ -90,11 +90,11 @@ function Pagamento() {
           <View style={styles.view10}>
           <Text style={styles.view11}>Total</Text>
           <View style={styles.view12}>
-            <Text>R$ {calcularSubtotal()}</Text> 
+            <Text style={styles.text}>R$ {calcularSubtotal()}</Text> 
           </View>
         </View>
           <TouchableOpacity style={styles.view13} onPress={handleFinalizar}>
-            <Text>Finalizar</Text>
+            <Text style={styles.text2}>Finalizar</Text>
           </TouchableOpacity>
         </View>
       </View>
@@ -105,128 +105,98 @@ function Pagamento() {
 const styles = StyleSheet.create({
   view1: {
     backgroundColor: "#FFF",
-    display: "flex",
+    flex: 1,
+    alignItems: "center",
     maxWidth: 480,
     width: "100%",
     paddingBottom: 80,
-    flexDirection: "column",
-    alignItems: "stretch",
-    fontWeight: "700",
-    margin: "0 auto",
   },
   view2: {
     backgroundColor: "#86B049",
     width: "100%",
     alignItems: "center",
-    color: "#FFF",
-    whiteSpace: "nowrap",
     justifyContent: "center",
-    padding: "27px 20px",
+    paddingVertical: 27,
+    paddingHorizontal: 20,
   },
   view3: {
-    display: "flex",
     marginTop: 30,
     width: "100%",
-    flexDirection: "column",
-    alignItems: "end",
-    fontSize: 20,
-    color: "#000",
-    padding: "0 20px 0 11px",
+    paddingHorizontal: 20,
   },
   view4: {
-    fontFamily: "Kulim Park, sans-serif",
-    alignSelf: "stretch",
+    marginBottom: 20,
   },
   view5: {
-    fontFamily: "Kulim Park, sans-serif",
     borderRadius: 18,
     borderColor: "rgba(71, 105, 48, 1)",
-    borderStyle: "solid",
     borderWidth: 3,
     backgroundColor: "#FFF",
     marginTop: 14,
-    width: 340,
-    maxWidth: "100%",
-    alignItems: "start",
-    justifyContent: "center",
-    padding: "20px 20px",
+    width: "100%",
+    maxWidth: 340,
+    paddingHorizontal: 20,
+    paddingVertical: 20,
   },
   view6: {
-    fontFamily: "Kulim Park, sans-serif",
     borderRadius: 18,
     borderColor: "rgba(71, 105, 48, 1)",
-    borderStyle: "solid",
     borderWidth: 3,
     backgroundColor: "#FFF",
     marginTop: 14,
-    width: 340,
-    maxWidth: "100%",
-    alignItems: "start",
-    justifyContent: "center",
-    padding: "20px 20px",
+    width: "100%",
+    maxWidth: 340,
+    paddingHorizontal: 20,
+    paddingVertical: 20,
   },
   view7: {
-    fontFamily: "Kulim Park, sans-serif",
     borderRadius: 18,
     borderColor: "rgba(71, 105, 48, 1)",
-    borderStyle: "solid",
     borderWidth: 3,
     backgroundColor: "#FFF",
     marginTop: 14,
-    width: 340,
-    maxWidth: "100%",
-    alignItems: "start",
-    whiteSpace: "nowrap",
-    justifyContent: "center",
-    padding: "20px 20px",
+    width: "100%",
+    maxWidth: 340,
+    paddingHorizontal: 20,
+    paddingVertical: 20,
   },
   view8: {
-    fontFamily: "Kulim Park, sans-serif",
     borderRadius: 18,
     borderColor: "rgba(71, 105, 48, 1)",
-    borderStyle: "solid",
     borderWidth: 3,
     backgroundColor: "#FFF",
     marginTop: 14,
-    width: 340,
-    maxWidth: "100%",
-    alignItems: "start",
-    justifyContent: "center",
-    padding: "20px 20px",
+    width: "100%",
+    maxWidth: 340,
+    paddingHorizontal: 20,
+    paddingVertical: 20,
   },
   view9: {
-    fontFamily: "Kulim Park, sans-serif",
     borderRadius: 14,
     borderColor: "rgba(71, 105, 48, 1)",
-    borderStyle: "solid",
     borderWidth: 3,
     backgroundColor: "#FFF",
     marginTop: 14,
-    width: 340,
-    maxWidth: "100%",
-    alignItems: "start",
-    whiteSpace: "nowrap",
-    justifyContent: "center",
-    padding: "20px 20px",
+    width: "100%",
+    maxWidth: 340,
+    paddingHorizontal: 20,
+    paddingVertical: 20,
   },
   view10: {
-    alignSelf: "center",
-    display: "flex",
     marginTop: 20,
     width: "100%",
     maxWidth: 330,
-    alignItems: "stretch",
-    gap: 20,
-    fontSize: 24,
+    alignItems: "center",
+    flexDirection: "row",
+    justifyContent: "space-between",
   },
   view11: {
-    fontFamily: "Kulim Park, sans-serif",
+    fontFamily: "KulimPark_700Bold",
+    fontSize: 24,
   },
   view12: {
-    fontFamily: "Kulim Park, sans-serif",
-    flexGrow: "1",
-    flexShrink: "1",
-    flexBasis: "auto",
+    flex: 1,
+    marginLeft: 20,
   },
   view13: {
     borderRadius: 8,
@@ -236,12 +206,27 @@ const styles = StyleSheet.create({
     width: "100%",
     maxWidth: 340,
     alignItems: "center",
-    color: "#FFF",
-    whiteSpace: "nowrap",
     justifyContent: "center",
-    padding: "23px 60px",
-    font: "24px Kulim Park, sans-serif ",
+    paddingVertical: 23,
+    paddingHorizontal: 60,
   },
+  input: {
+    fontFamily: "KulimPark_700Bold",
+    fontSize: 16,
+    borderBottomWidth: 1,
+    borderBottomColor: "#333",
+    paddingVertical: 5,
+    marginTop: 5,
+  },
+  text: {
+    fontFamily: "KulimPark_700Bold",
+    fontSize: 16
+  },
+  text2: {
+    fontFamily: "KulimPark_700Bold",
+    fontSize: 16,
+    color: "#FFF"
+  }
 });
 
 export default Pagamento;

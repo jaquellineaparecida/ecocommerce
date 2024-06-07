@@ -31,32 +31,30 @@ function Home() {
 }
 
 const styles = StyleSheet.create({
+  scrollView: {
+    flexGrow: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
   view1: {
     backgroundColor: "#476930",
-    display: "flex",
     maxWidth: 480,
     width: "100%",
     flexDirection: "column",
     alignItems: "center",
-    fontSize: 24,
-    whiteSpace: "nowrap",
-    margin: "0 auto",
-    padding: "100px 0",
+    paddingVertical: 200,
   },
   image1: {
-    position: "relative",
-    overflow: "hidden",
-    alignSelf: "stretch",
-    minHeight: 45,
-    width: "100%",
-    alignItems: "center",
-    color: "#FFF",
-    justifyContent: "center",
-    aspectRatio: "0.80",
-    height: 290
+    width: '75%',
+    height: 300,
+  },
+  text: {
+    fontFamily: "KulimPark_700Bold",
+    color: "#fff",
+    fontSize: 24,
+    marginBottom: 30,
   },
   view2: {
-    fontFamily: "KulimPark_700Bold",
     borderRadius: 9,
     backgroundColor: "#FFF",
     marginTop: 35,
@@ -64,10 +62,10 @@ const styles = StyleSheet.create({
     maxWidth: 250,
     alignItems: "center",
     justifyContent: "center",
-    padding: "15px 10px",
+    paddingVertical: 15,
+    paddingHorizontal: 10,
   },
   view3: {
-    fontFamily: "KulimPark_700Bold",
     borderRadius: 9,
     backgroundColor: "#FFF",
     marginTop: 20,
@@ -75,17 +73,13 @@ const styles = StyleSheet.create({
     maxWidth: 250,
     alignItems: "center",
     justifyContent: "center",
-    padding: "15px 10px",
-  },
-  text: {
-    fontFamily: "KulimPark_700Bold",
-    color: "#fff",
-    fontSize: 24
+    paddingVertical: 15,
+    paddingHorizontal: 10,
   },
   btnText: {
     fontFamily: "KulimPark_700Bold",
     color: "#000",
-    fontSize: 16
+    fontSize: 16,
   }
 });
 
