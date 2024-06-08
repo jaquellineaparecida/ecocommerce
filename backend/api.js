@@ -20,7 +20,7 @@ async function connect() {
   });
 }
 
-// Criando o ednpoint para cadastrar uma empresa
+// Criando o endpoint para cadastrar uma empresa
 app.post('/cadastroUsuario', async (req, res) => {
     const { nm_empresa, nmr_cnpj, ds_segmento, ds_senha, ds_email, ds_telefone } = req.body;
     let connection;
@@ -83,7 +83,7 @@ app.post('/login', async (req, res) => {
     }
   });
 
-// Rota para cadastrar um novo produto (plástico)
+// Criando o endpoint para cadastrar um novo produto (plástico)
 app.post('/plasticos', async (req, res) => {
   const { tipo_plastico, ds_descricao, ds_quantidade, ds_preco, ds_reciclavel } = req.body;
 
@@ -103,7 +103,7 @@ app.post('/plasticos', async (req, res) => {
   }
 });
 
-// Listando todos os plasticos
+// Endpoint Listando todos os plasticos
 app.get('/listaPlasticos', async (req, res) => {
   try {
     const connection = await connect();
@@ -112,7 +112,6 @@ app.get('/listaPlasticos', async (req, res) => {
     );
     await connection.close();
 
-    // Enviando os dados como JSON
     res.send(result.rows.map(row => ({
       tipo_plastico: row[0],
       ds_descricao: row[1],
@@ -124,14 +123,13 @@ app.get('/listaPlasticos', async (req, res) => {
   }
 });
 
-// Rota para processar o pagamento
+// Endpoint do pagamento
 app.post('/pagamento', async (req, res) => {
   try {
     const { nmr_cartao, nm_cartao, data_validade, ds_cvv, ds_total } = req.body;
 
     const connection = await connect();
     
-    // Gere o próximo ID de pagamento usando a sequência
     const result = await connection.execute(
       `INSERT INTO tb_pagamento (id_pagamento, nmr_cartao, nm_cartao, data_validade, ds_cvv, ds_total) 
        VALUES (seq_pagamento_e.nextval, :nmr_cartao, :nm_cartao, :data_validade, :ds_cvv, :ds_total)`,
