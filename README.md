@@ -10,3 +10,9 @@ Primeiro abra um terminal, entre na pasta **BACKEND** E rode o arquivo api.js (n
 Após o servidor estar rodando normalmente na porta 3030, abra outro terminal e dentro da pasta ecocommerce rode o comando **NPM RUN WEB**.
 
 Esse é um projeto da GLOBAL SOLUTION para a faculdade FIAP 
+
+##  Integrantes
+
+Nome: Caio Rocha Fernandes 
+Nome: Florbela Freitas Oliveira 
+Nome: Jaquelline Aparecida C. B. de Sousa 
